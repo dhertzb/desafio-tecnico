@@ -1,0 +1,10 @@
+.avatar {
+  width: 180px;
+  height: 180px;
+  img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}

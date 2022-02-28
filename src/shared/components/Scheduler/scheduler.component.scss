@@ -1,0 +1,24 @@
+.scheduler {
+  padding: 20px;
+  &__header {
+    background-color: #7655e9;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+  &__cta {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .scheduler__body {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  .scheduler__time-picker {
+    display: block;
+    margin-top: 20px;
+  }
+}

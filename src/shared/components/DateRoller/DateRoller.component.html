@@ -1,0 +1,22 @@
+<div class="date-roller">
+  <div
+    class="date-roller__control date-roller__control--back"
+    (click)="onRoll('back')"
+  >
+    <
+  </div>
+  <div class="date-roller__row">
+    <div *ngFor="let dateColumn of dateColumns" class="date-roller__column">
+      <span class="week-day">{{ dateColumn.dayByWeek }}</span>
+      <span class="month-day"
+        >{{ dateColumn.month }} {{ dateColumn.dayByMonth }}</span
+      >
+    </div>
+  </div>
+  <div
+    class="date-roller__control date-roller__control--foward"
+    (click)="onRoll('foward')"
+  >
+    >
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.specialists__section--main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .specialists__card {
+    margin: 25px 0 25px 0;
+    width: 90%;
+  }
+  .card__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 768px) {
+    .card__body {
+      flex-direction: row;
+      specialist-info {
+        width: 45%;
+      }
+      scheduler {
+        width: 55%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .specialists__card {
+      width: 80%;
+    }
+    .card__body {
+      padding: 5%;
+      specialist-info {
+        width: 60%;
+        padding-left: 40px;
+      }
+      scheduler {
+        width: 40%;
+      }
+    }
+  }
+}

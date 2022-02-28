@@ -1,0 +1,19 @@
+<div class="scheduler">
+  <div class="scheduler__header">
+    <div>
+      <h1 class="scheduler__cta">Escolha um horário</h1>
+      <h4>Fuso horário de {{ timezone }} ({{ utc }})</h4>
+    </div>
+  </div>
+  <date-roller
+    [maxDays]="4"
+    (onChange)="getAvailableTimesByDates($event)"
+  ></date-roller>
+  <div class="scheduler__body">
+    <time-picker
+      [times]="times"
+      (onPick)="createAppointmentByTime($event)"
+      class="scheduler__time-picker"
+    ></time-picker>
+  </div>
+</div>

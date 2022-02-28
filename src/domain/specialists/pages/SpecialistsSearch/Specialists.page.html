@@ -1,0 +1,19 @@
+<page background="">
+  <!-- <header class="specialists-page__header">
+    <navbar></navbar>
+    <div>
+      <h1>Encontre seu especialista</h1>
+      <h2>Converse com um profissional sem sair de casa</h2>
+      <search-bar></search-bar>
+    </div>
+  </header> -->
+  <!-- <filter fixed-on-scroll="true"></filter> -->
+  <section class="specialists__section--main">
+    <card class="py-2 specialists__card" *ngFor="let specialist of specialists">
+      <div class="card__body">
+        <specialist-info [specialist]="specialist"></specialist-info>
+        <scheduler></scheduler>
+      </div>
+    </card>
+  </section>
+</page>

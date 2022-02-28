@@ -1,0 +1,34 @@
+<div class="specialist__info">
+  <div class="specialist__showcase">
+    <avatar class="specialist__avatar" [url]="specialist.avatarUrl"></avatar>
+    <div>
+      <h3 class="specialist__name">{{ specialist.name }}</h3>
+      <div>
+        <div>
+          <span class="specialist__job-title">{{ specialist.jobTitle }}</span>
+          <span class="specialist__location"> | {{ specialist.location }}</span>
+        </div>
+        <div>
+          <rating [rate]="specialist.rate"></rating>
+          <span class="specialist__rate-quantity"
+            >({{ specialist.rateQuantity }} reviews)</span
+          >
+        </div>
+        <div>
+          <span class="specialist__language"
+            >Idiomas: {{ specialist.language }}</span
+          >
+        </div>
+      </div>
+      <div class="d-flex align-items-center mt-2">
+        <h3 class="specialist__price">R$ {{ specialist.price }} /</h3>
+        <h4 class="specialist__session-time">
+          {{ specialist.sessionTime | uppercase }}
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="specialist__description">
+    {{ specialist.description }}
+  </div>
+</div>

@@ -1,27 +1,51 @@
 # ZenklubChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+- npm install
+- npm run fake-server
+- npm run start
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Tentei dar uma organizada no projeto com base na página https://zenklub.com.br/busca (Só pra usar de exemplo, já que pra um site eu não vejo tanto sentido em seguir essa abordagem), e principios básicos do DDD
 
-## Code scaffolding
+Em domains temos divido por pastas os subdominios do negócio, dentro de cada pasta coloquei
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- components -- componentes relacionado ao subdomino
+- models -- tipos relacionado ao subdomino
+- pages -- páginas do subdomino
+- services -- serviços relacionado ao subdomino
+- state -- estados relacionado ao subdomino
 
-## Build
+Em shared temos os componentes/serviços/estilos/estado compartilhados por toda a aplicação independente do subdominio.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Por exemplo o serviço de datas
 
-## Running unit tests
+![alt text](page.png "Title")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+<page background="">
 
-## Running end-to-end tests
+   <header class="specialists-page__header">
+    <navbar></navbar>
+    <div>
+      <h1>Encontre seu especialista</h1>
+      <h2></h2>
+      <search-bar></search-bar>
+    </div>
+  </header>
+  <filter fixed-on-scroll="true"></filter>
+  <section class="specialists__section--main">
+    <card class="py-2 specialists__card" *ngFor="let specialist of specialists">
+      <div class="card__body">
+        <specialist-info [specialist]="specialist"></specialist-info>
+        <scheduler></scheduler>
+      </div>
+    </card>
+  </section>
+</page>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+Aqui um exemplo de como eu abstrairia a página de busca, componentizando de acordo com suas responsabilidades. Dentro do componente Scheduler tem o date-roller e o time-picker, quando o usuário rola a fileira de datas é emitido um evento com o array de datas como output. A partir dai o usuário pode usar esse array localmente ( como eu usei no scheduler ) para buscar os horários disponiveis ou poderia emitir uma action e salvar as datas na store e passar para todas instancias do time-picker pra que todos ficarem sincronizados na página como eu percebi que acontece na página de busca atualmente.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Infelizmente não tive tempo pra desenvolver os testes, mas achei bem parecido a api do karma com o jest então acho que no futuro vou me familiarizar tranquilo

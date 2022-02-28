@@ -1,0 +1,13 @@
+<div class="time-picker">
+  <div class="time-picker__wrapper">
+    <ul class="time-picker__list" *ngFor="let day of times">
+      <li
+        (click)="onClickTime(time)"
+        class="time-picker__item"
+        *ngFor="let time of day"
+      >
+        {{ time != null ? time : "-" }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.time-picker {
+  height: 300px;
+  display: flex;
+  overflow: auto;
+  justify-content: space-around;
+  .time-picker__wrapper {
+    padding: 10px 0px;
+    width: calc(100% - 54px);
+    display: flex;
+    justify-content: space-around;
+  }
+  .time-picker__list {
+    flex-direction: column;
+    display: flex;
+    .time-picker__item {
+      display: flex;
+      color: #4d5c65;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 15px;
+      background-color: #e1e6ec;
+      margin-bottom: 10px;
+      &:hover {
+        color: #fff;
+        background-color: #7655e9;
+      }
+    }
+  }
+}

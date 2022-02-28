@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(app/app.reset.scss);
+
+* {
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.mt-2 {
+  margin-top: 0.75em;
+}
