@@ -3,6 +3,7 @@
 - npm install
 - npm run fake-server
 - npm run start
+- navegar para /localhost:port/specialists/search
 
 ---
 
