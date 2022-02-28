@@ -16,15 +16,25 @@ Em domains temos divido por pastas os subdominios do negócio, dentro de cada pa
 - services -- serviços relacionado ao subdomino
 - state -- estados relacionado ao subdomino
 
-Em shared temos os componentes/serviços/estilos/estado compartilhados por toda a aplicação independente do subdominio.
+Em shared temos os componentes/serviços/estilos/estado compartilhados por toda a aplicação independente do subdominio. Por exemplo o serviço de datas.
 
-Por exemplo o serviço de datas
 
-![alt text](page.png "Title")
+
+Aqui um exemplo de como eu abstrairia a página de busca, componentizando de acordo com suas responsabilidades. Dentro do componente Scheduler tem o date-roller e o time-picker, quando o usuário rola a fileira de datas é emitido um evento com o array de datas como output. A partir dai o dev pode usar esse array localmente ( como eu usei no scheduler ) para buscar os horários disponiveis ou poderia emitir uma action e salvar as datas na store e passar para todas instancias do time-picker pra que todos ficarem sincronizados na página como eu percebi que acontece na página de busca atualmente.
+
+Infelizmente não tive tempo pra desenvolver os testes, mas achei bem parecido a api do karma com o jest então acho que no futuro vou me familiarizar tranquilo
+
+
+<div style="display: flex;">
+  <div>
+    <img src="./page.png">
+  </div>
+    <div>
+  </div>
+</div>
 
 ```
-<page background="">
-
+<page>
    <header class="specialists-page__header">
     <navbar></navbar>
     <div>
@@ -46,6 +56,4 @@ Por exemplo o serviço de datas
 
 ```
 
-Aqui um exemplo de como eu abstrairia a página de busca, componentizando de acordo com suas responsabilidades. Dentro do componente Scheduler tem o date-roller e o time-picker, quando o usuário rola a fileira de datas é emitido um evento com o array de datas como output. A partir dai o usuário pode usar esse array localmente ( como eu usei no scheduler ) para buscar os horários disponiveis ou poderia emitir uma action e salvar as datas na store e passar para todas instancias do time-picker pra que todos ficarem sincronizados na página como eu percebi que acontece na página de busca atualmente.
 
-Infelizmente não tive tempo pra desenvolver os testes, mas achei bem parecido a api do karma com o jest então acho que no futuro vou me familiarizar tranquilo
