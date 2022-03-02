@@ -9,7 +9,7 @@
 
 Tentei dar uma organizada no projeto com base na página https://zenklub.com.br/busca (Só pra usar de exemplo, já que pra um site eu não vejo tanto sentido em seguir essa abordagem), e principios básicos do DDD
 
-Em domains temos divido por pastas os subdominios do negócio, dentro de cada pasta coloquei
+Em domains temos dividido por pastas os subdominios do negócio, dentro de cada pasta coloquei
 
 - components -- componentes relacionado ao subdomino
 - models -- tipos relacionado ao subdomino
